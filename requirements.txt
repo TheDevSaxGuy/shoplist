@@ -1,0 +1,7 @@
+flask
+Flask-Bootstrap4
+flask-wtf
+flask-testing
+flask-login==0.4.1
+blinker
+firebase-admin

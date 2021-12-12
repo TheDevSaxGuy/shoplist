@@ -1,0 +1,15 @@
+{% import 'bootstrap/wtf.html' as wtf%}
+{% macro render_product(product, delete_form, update_form) %}
+    <tr>
+        <td> {{product.to_dict().descripcion}} </td>  
+        <td>${{product.to_dict().precio}}</td>
+        <td>
+            <button type="button" class="btn btn-light">
+                {{ wtf.quick_form(delete_form, action=url_for('delete', product_id=product.id)) }}
+            </button>
+            <button type="button" class="btn btn-light">
+            {{ wtf.quick_form(update_form, action=url_for('update', product_id=product.id, done=product.to_dict().done)) }}
+            </button>
+        </td>
+    </tr>
+{%endmacro%}
